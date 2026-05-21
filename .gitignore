@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Sidecar state files (drop targets persist here — keep these out of the repo)
+.image-slots.state.json
+.design-canvas.state.json
+
+# Misc
+*.log

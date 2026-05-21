@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sushma EVS — Portfolio Variants</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; font-family: 'Geist', system-ui, sans-serif; }
+  body { min-height: 100vh; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="data.js"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="variant1-editorial.jsx"></script>
+<script type="text/babel" src="variant2-dashboard.jsx"></script>
+<script type="text/babel" src="variant3-story.jsx"></script>
+
+<script type="text/babel">
+const PALETTES = /*EDITMODE-BEGIN*/{
+  "palette": "forest"
+}/*EDITMODE-END*/;
+
+// Color sets per variant per palette
+const PALETTE_DEFS = {
+  warm: {
+    label: "Warm",
+    editorial: { accent: "#b5563c", bg: "#f5f1ea", ink: "#1a1814" },
+    dashboard: { accent: "#16a34a", bg: "#0d0f12", ink: "#e6e8ec", grid: "#1f2329" },
+    story:     { accent: "#7c3aed", bg: "#fbf9f6", ink: "#1c1a26", soft: "#f0ece4" },
+  },
+  forest: {
+    label: "Forest",
+    editorial: { accent: "#2d6a4f", bg: "#f4f1ea", ink: "#1a1f1c" },
+    dashboard: { accent: "#84cc16", bg: "#0c1110", ink: "#e8ece6", grid: "#1c241f" },
+    story:     { accent: "#16a34a", bg: "#f8faf6", ink: "#0f1b14", soft: "#e8efe2" },
+  },
+  ink: {
+    label: "Ink & paper",
+    editorial: { accent: "#1c1c1c", bg: "#f7f5f0", ink: "#1c1c1c" },
+    dashboard: { accent: "#f5f3ee", bg: "#0a0a0a", ink: "#f5f3ee", grid: "#1d1d1d" },
+    story:     { accent: "#111111", bg: "#fdfcf9", ink: "#0a0a0a", soft: "#ecebe5" },
+  },
+  ocean: {
+    label: "Deep ocean",
+    editorial: { accent: "#1e6091", bg: "#f1f3f5", ink: "#0f1a26" },
+    dashboard: { accent: "#22d3ee", bg: "#08111a", ink: "#dceaf2", grid: "#142231" },
+    story:     { accent: "#2563eb", bg: "#f7f9fc", ink: "#0e1626", soft: "#e3eaf2" },
+  },
+};
+
+function App() {
+  const [t, setTweak] = useTweaks(PALETTES);
+  const pal = PALETTE_DEFS[t.palette] || PALETTE_DEFS.warm;
+
+  return (
+    <React.Fragment>
+      <DesignCanvas>
+        <DCSection id="overview" title="Sushma EVS · Portfolio Variants" subtitle="Three directions exploring layout, tone, and project showcase. Click the expand icon on any artboard to view fullscreen. Use the Tweaks panel to swap color palettes.">
+          <DCArtboard id="editorial" label="V1 · Editorial — formal, serif-led, modal case studies" width={1280} height={4080}>
+            <VariantEditorial {...pal.editorial} />
+          </DCArtboard>
+          <DCArtboard id="dashboard" label="V2 · Dashboard — data-themed, sidebar nav, KPI tiles" width={1280} height={3960}>
+            <VariantDashboard {...pal.dashboard} />
+          </DCArtboard>
+          <DCArtboard id="story" label="V3 · Story — conversational, accordion case studies" width={1280} height={4640}>
+            <VariantStory {...pal.story} />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Color palette">
+          <TweakRadio
+            label="Palette"
+            value={t.palette}
+            options={[
+              { value: "warm", label: "Warm" },
+              { value: "forest", label: "Forest" },
+              { value: "ink", label: "Ink" },
+              { value: "ocean", label: "Ocean" },
+            ]}
+            onChange={(v) => setTweak("palette", v)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
