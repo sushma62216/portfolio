@@ -2,14 +2,14 @@
 window.RESUME = {
   name: "Sushma EVS",
   fullName: "Venkata Sai Sushma Emmadi",
-  role: "Data Analyst",
+  role: "Analytics Engineer",
   email: "sushmaevs@gmail.com",
   phone: "+1 (667) 445-8558",
   linkedin: "linkedin.com/in/sushma-evs",
   github: "github.com/sushma62216",
   location: "United States",
-  summary: "Data Analyst translating product and operational data into dashboards, KPI frameworks, and insights for cross-functional teams. Strong in SQL and Python, with working knowledge of Power BI, Tableau, and cloud platforms (AWS, Azure).",
-  longBio: "I'm a data analyst who likes the unglamorous middle of the stack — defining the KPIs before the dashboards, validating the data before the charts, and making sure the metric on the slide actually means what it says. I work across SQL, Python, dbt, Airflow, and Snowflake, and I get the most out of partnering with founders and PMs on early-stage measurement strategy.",
+  summary: "Analytics Engineer focused on the data layer underneath — clean schemas, well-tested dbt models, and pipelines that don't silently break. Strong in SQL, Python, Snowflake, and dbt, with experience partnering with product teams on KPI frameworks and early-stage measurement strategy.",
+  longBio: "I'm an analytics engineer who works in the layer underneath the dashboards — clean schemas, well-tested dbt models, pipelines that don't silently break, and metrics that actually mean what they say. I've built end-to-end pipelines on Snowflake and Airflow, designed dbt mart layers on million-row datasets, and partnered with product teams to define KPIs before the dashboards get built. I'm comfortable in early-stage environments and used to figuring things out without a playbook.",
   skills: {
     "Analytics & Viz": ["Python", "Pandas", "NumPy", "Matplotlib", "SQL", "Tableau", "Power BI"],
     "Data Analysis": ["Statistical Analysis", "KPI Reporting", "Ad Hoc Analysis", "Data Cleaning", "Data Wrangling"],
@@ -31,16 +31,16 @@ window.RESUME = {
   ],
   experience: [
     {
-      role: "Data Analyst",
+      role: "Analytics Engineer",
       company: "Kahana",
       location: "Chicago, IL (Remote)",
       period: "Apr 2026 – Present",
       current: true,
       tags: ["product analytics", "KPI design", "Supabase", "early-stage"],
       bullets: [
-        "Defining the product analytics framework for the upcoming Product Hunt launch of Oasis (AI-powered productivity tool), scoping 20+ KPIs across activation, retention, monetization, and feedback quality.",
-        "Mapping the company's Supabase data model to planned analytics use cases — identifying events, tables, and user actions needed to support behavior analysis, conversion funnels, and product usage monitoring.",
-        "Collaborating with the founding team to translate product goals into measurable success criteria, including feedback-quality monitoring and anomaly-detection logic for low-signal user submissions in training data."
+        "Architecting the product analytics framework for Oasis (AI-powered productivity tool), designing 20+ KPIs across activation, retention, monetization, and feedback quality ahead of the Product Hunt launch.",
+        "Owning the Supabase data model to analytics mapping — identifying the events, tables, and user actions needed to power behavior analysis, conversion funnels, and product usage monitoring.",
+        "Leading measurement strategy with the founding team, translating product goals into success criteria including feedback-quality monitoring and anomaly-detection logic for low-signal user submissions in training data."
       ]
     },
     {
@@ -87,7 +87,7 @@ window.RESUME = {
       period: "Apr 2026",
       kind: "Independent Project",
       github: "https://github.com/sushma62216/medicare-part-d",
-      summary: "1.1M CMS Medicare prescriber records ingested into Snowflake, transformed through dbt into five marts, with a RAG layer in progress for natural-language querying.",
+      summary: "1.1M CMS Medicare prescriber records ingested into Snowflake, transformed through dbt into five marts, currently extending with a RAG layer for natural-language querying.",
       stack: ["Snowflake", "dbt", "Cortex", "FastAPI", "Next.js", "Mistral"],
       metrics: [
         { label: "Records", value: "1.1M" },
@@ -98,7 +98,7 @@ window.RESUME = {
         "Shipped Phase 1 pipeline ingesting 1.1M CMS Medicare prescriber records into Snowflake and transforming them through a dbt staging→marts layer, producing five aggregate marts (specialty, drug, state, top providers, specialty-drug).",
         "Designed a pre-aggregated embedding strategy that converts ~10K–50K dbt mart rows into natural-language summary strings — cutting the embedding corpus ~95% vs. row-level embedding while preserving accuracy for aggregate queries.",
         "Modeled raw→staging→marts lineage in dbt with schema tests on key columns (NPI, drug name) and idempotent transformations for safe reruns.",
-        "Building Phase 2 (RAG + app): in-database vector embeddings + cosine similarity on Snowflake, FastAPI backend on Mistral via Snowflake Cortex, Next.js chat UI with cited sources and multi-turn memory."
+        "Currently extending Phase 1 with a RAG layer: in-database vector embeddings + cosine similarity on Snowflake, FastAPI backend on Mistral via Snowflake Cortex, Next.js chat UI with cited sources and multi-turn memory."
       ]
     }
   ],

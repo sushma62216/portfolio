@@ -137,7 +137,7 @@ function Hero({ theme, fontStack }) {
       <FadeIn>
         <div style={{ ...mono, fontSize: 12, color: theme.accent, marginBottom: 24, letterSpacing: "0.06em", display: "inline-flex", alignItems: "center", gap: 8 }}>
           <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: theme.accent, boxShadow: `0 0 12px ${theme.accent}` }}/>
-          Open to BI Analyst · Data Analyst · Analytics Engineer Roles
+          Open to Data &amp; Analytics Engineer Roles
         </div>
         <h1 style={{ ...sans, fontSize: "clamp(48px, 6.2vw, 76px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.035em", margin: 0 }}>
           Hi, I'm Sushma —<br/>

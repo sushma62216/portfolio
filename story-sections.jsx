@@ -14,13 +14,13 @@ function About({ theme, fontStack }) {
       <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 64, alignItems: "start" }}>
         <FadeIn style={{ fontSize: 19, lineHeight: 1.65, color: theme.ink }}>
           <p style={{ marginTop: 0 }}>
-            While working on ML, I kept running into the same wall — models are only as good as the data feeding them. You can have the cleanest architecture in the world, but if the data underneath is messy, the model learns the mess.
+            While working on ML, I kept running into the same wall — models are only as good as the data feeding them. Messy data doesn't just slow you down; the model learns the mess.
           </p>
           <p>
-            That's still true for every AI tool we use today. None of them work without clean, well-modeled data underneath. <strong>Data is the backbone of every AI system — and I want to be the person making sure it's solid.</strong>
+            That realization pulled me toward analytics engineering. The deeper I went, the more I saw that the real leverage isn't in the model — it's in the layer underneath: clean schemas, well-tested dbt models, pipelines that don't silently break, and <em style={{ ...serif }}>metrics that actually mean what they say</em>.
           </p>
           <p style={{ marginBottom: 0 }}>
-            That realization pulled me toward data engineering as a career path. The deeper I went, the more I sharpened my BI and analysis skills alongside it — building dashboards, working with stakeholders, and sitting right at the <em style={{ ...serif }}>intersection of data and business</em>.
+            So that's where I work now. I've built end-to-end pipelines on Snowflake and Airflow, designed dbt mart layers on million-row datasets, and partnered with product teams to define KPIs before the dashboards get built. I'm also comfortable in early-stage environments — I've worked directly with founders and core teams, which means I'm used to figuring things out without a playbook and moving fast when the roadmap shifts.
           </p>
         </FadeIn>
         <FadeIn delay={120}>
